@@ -1,0 +1,44 @@
+Data Definition Language
+
+Allows the specification of not only a set of relations but 
+also information about each relation, including:
+
+ The schema for each relation.
+ The domain of values associated with each attribute.
+ Integrity constraints
+ The set of indices to be maintained for each relations.
+ Security and authorization information for each relation.
+ The physical storage structure of each relation on disk.
+
+Domain Types in SQL
+
+char(n). Fixed length character string, with user-specified length n.
+ varchar(n). Variable length character strings, with user-specified
+maximum length n.
+ int. Integer (a finite subset of the integers that is machinedependent).
+ smallint. Small integer (a machine-dependent subset of the integer
+domain type).
+ numeric(p,d). Fixed point number, with user-specified precision of
+p digits, with n digits to the right of decimal point.
+ real, double precision. Floating point and double-precision
+floating point numbers, with machine-dependent precision.
+ float(n). Floating point number, with user-specified precision of at
+least n digits.
+
+Create Table Construct
+
+ An SQL relation is defined using the create table command:data.language
+
+:
+create table r (A1 D1, A2 D2, ..., An Dn,
+(integrity-constraint1),
+...,
+(integrity-constraintk))
+ r is the name of the relation
+ each Ai is an attribute name in the schema of relation r
+ Di is the data type of values in the domain of attribute Ai
+ Example:
+create table branch
+(branch_name char(15) not null,
+branch_city char(30),
+assets integer)
